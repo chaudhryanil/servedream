@@ -1,0 +1,25 @@
+the qif2db module saves the records in to db
+
+returns a JSON document that tells the caller,
+
+- No of transactions imported
+- No of credit Transactions
+- No of debit transactions
+- Value of debit
+- Value of credit
+- First date
+- Last Date
+
+
+Import Summary 
+{
+	Count
+	First Date
+	Last Date
+	DebitValue
+	CreditValue
+}
+
+
+
+Money database has a account collection, and a 

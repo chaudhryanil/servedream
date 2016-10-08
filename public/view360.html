@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Account Dashboard</title>
+        <meta charset="UTF-8">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-1.11.2.js"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript" src="js/angular.js"></script>
+        <script type="text/javascript" src="js/wizaccount.js"></script>
+
+        <style>
+        .circle-button {
+            border-radius: 30px;
+        }
+        .box1 {
+            background-color: #cdbfe3 ;
+        }
+        .box2 {
+            background-color: orange;
+        }
+    </style>
+    </head>
+    <body ng-app="wizaccount">
+        <nav class="navbar navbar-default">
+            <div class="container col-sm-offset-2">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WizMoney</a>
+                </div>
+                <ul class='nav navbar-nav'>
+                    <li><a href='#'>Home</a></li>
+                    <li><a href='#' class="active">Accounts</a></li>
+                    <li><a href='#'>Tax</a></li>
+                    <li><a href='#'>Reports</a></li>
+
+                </ul>
+            </div>
+        </nav>
+        <div class="page-header col-md-offset-1">
+            <h1 align="center">Manage Your Accounts <small>360 degree view of all your accounts</small></h1>
+        </div>
+
+        <div class="container col-sm-12" ng-controller="accountcontroller as accCtrl">
+            <div class="container col-sm-4">
+                <div class="container col-sm-6" style="padding-left: 0px">
+                    <div class='btn-group'>
+                      <button type="button" class='btn btn-default dropdown-toggle' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              All Account Types <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                              <li><a href="#">All Account Types</a></li>
+                              <li><a href="#">Banking</a></li>
+                              <li><a href="#">Investments</a></li>
+                              <li><a href="#">Cards</a></li>
+                          </ul>
+                    </div>
+                </div>
+                <div class="container col-sm-2"></div>
+                <div class="container col-sm-4">
+                    <button type="button" class="btn btn-default btn-round"><span class="glyphicon glyphicon-plus align-center"></span></button>
+                    <button type="button" class="btn btn-default btn-round">-</button>
+                </div>
+                <div class="row">
+                    <div class="container col-sm-12">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item" ng-repeat="account in accounts">
+                                <h4 class="list-group-item-heading">{{account.name}}</h4>
+                               <p class="list-group-item-text">{{account.bank + " - " + account.type}}</p>
+                           </a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default col-sm-8">
+                <div class="panel-heading">Transactions</div>
+                    <table class="table table-bordered">
+                        <thead class="info">
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Deposit</th>
+                            <th>Payment</th>
+                            <th>Balance</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11/09/2015</td>
+                                <td>POS Payment at Le Marche</td>
+                                <td>0.00</td>
+                                <td>5667.80</td>
+                                <td>789097.00</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+            </div>
+
+        </div>
+</body>
+
+</html>

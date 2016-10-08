@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="wizaccount">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>Account Maintenance</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/wizaccount.js"></script>
+    <div class='container' ng-controller="accountcontroller">
+      <div class="page-header">
+        <h1>Manage Your Account</h1>
+        <small>Create New Accounts or Modify Existing Ones</small>
+      </div>
+      <div class='col-md-12'>
+        <form class="form-horizontal" role="form">
+            <div class='col-md-offset-4'>
+              <div class="form-group">
+                  <label class="radio-inline"><input type="radio" name="acctyperadio">Bank Account</label>
+                  <label class="radio-inline"><input type="radio" name="acctyperadio">Invest Account</label>
+              </div>
+            </div>
+          <div class="form-group">
+              <div class="col-sm-3">
+                  <label for='accName' class="control-label">Give a Name to Your Account</label>
+              </div>
+            <div class="col-sm-8">
+              <input ng-model="accName" type='text' class="form-control input-lg" placeholder='Name to remember this account' id="accName">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-3">
+              <label for='bankName' class="control-label">Type the Financial Institution</label>
+            </div>
+            <div class="col-sm-8">
+              <input ng-model="bankName" type='text' class="form-control input-lg" placeholder='Name of Financial Institution' id="bankName">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-3">
+              <label for='accNumber' class="control-label">What is the A/C Number</label>
+            </div>
+            <div class="col-sm-6">
+              <input ng-model="accNumber" type='text' class="form-control input-lg" placeholder='Type Account Number Here' id="accNumber">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-3">
+              <label for='accFirstHolder' class="control-label">Name of First Holder</label>
+            </div>
+            <div class="col-sm-8">
+              <input ng-model="firstHolder" type='text' class="form-control input-lg" placeholder='Type LastName, First Name of First Holder' id="accFirstHolder">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-3">
+              <label for='accSecHolder' class="control-label">Name of Second Holder</label>
+            </div>
+            <div class="col-sm-8">
+              <input ng-model="secHolder" type='text' class="form-control input-lg" placeholder='Optionally Type LastName, First Name of Second Holder' id="accSecHolder">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-3">
+              <label for='accOpenDate' class="control-label">Date of Opening</label>
+            </div>
+            <div class="col-sm-5">
+              <input ng-model="accOpenDate" type='date' class="form-control input-lg" placeholder='Optionally Type LastName, First Name of Second Holder' id="accOpenDate">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-3">
+              <label for='accFileImport' class="control-label">Import Transactions</label>
+            </div>
+            <div class="col-sm-5">
+              <input type="file" class="form-control button-lg input-lg" id="accFileImport" onchange="angular.element(this).scope().setFile(this)">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-3">
+              <button type="button" name="button" class="btn btn-primary btn-lg" ng-click="createNew()">Create It</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
